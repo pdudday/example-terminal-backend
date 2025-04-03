@@ -342,3 +342,8 @@ post '/create_location' do
   content_type :json
   return location.to_json
 end
+
+# This endpoint helps log the errors at the server for debugging purposes with POS devices 
+post '/create_log' do
+  return log_info("info log from the client device : #{params[:log]}")
+end
